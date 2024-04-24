@@ -12,10 +12,11 @@ import './App.css'
 const clientID = import.meta.env.VITE_CLIENT_ID;
 const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
-const code = new URLSearchParams(window.location.search).get('code')
+const code: string | null = new URLSearchParams(window.location.search).get('code')
 
 
 function App() {
+  
 
   const [searchInput, setSearchInput] = useState("")
   const [accessToken, setAccessToken] = useState("")
