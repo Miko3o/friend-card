@@ -41,15 +41,13 @@ function App() {
 
 
 
-  return code ? (
+  return (
     <>
       <div className="flex justify-center h-screen w-screen bg-slate-300">
-        <MainCard name='chao' fav_song='walking on sunshine' profile_pic={placeholder_person} background_color={backgroundColor} bottom_bar_color={bottomBarColor}/>
-
-        <Dashboard code={code} />
+        <MainCard code={code} name='chao' fav_song='walking on sunshine' profile_pic={placeholder_person} background_color={backgroundColor} bottom_bar_color={bottomBarColor}/>
       </div>
     </>
-  ): <Login/>
+  )
 }
 
 export default App

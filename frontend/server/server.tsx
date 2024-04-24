@@ -7,7 +7,8 @@ const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 
-
+const clientID = "3f726e510e704716a984793b24877ced";
+const clientSecret = "63c553e7fae84d98a9fbd57bee8b5685";
 
 
 app.post('/refresh', (req, res) => {
@@ -19,10 +20,14 @@ app.post('/refresh', (req, res) => {
         refreshToken
     })
 
-    spotifyWebApi.refreshAccessToken()
+    spotifyApi.refreshAccessToken()
     .then((data) => {
-        console.log(data.body);
-    }).catch(() => {
+        res.json({
+            accessToken: data.body.accessToken,
+            expiresIn: data.body.expiresIn
+        });
+    }).catch(err => {
+        console.log(err)
         res.sendStatus(400)
     })
 })
@@ -46,7 +51,7 @@ app.post('/login', (req, res) => {
             expiresIn: data.body.expires_in,
             hi: 'hi'
         })
-    }).catch((err) => {
+    }).catch(err => {
         console.error('Authorization error:', err)
         res.sendStatus(400)
     })

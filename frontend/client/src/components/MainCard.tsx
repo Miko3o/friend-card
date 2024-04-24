@@ -1,8 +1,12 @@
 import'./components.css'
 
+import { Dashboard } from './Dashboard'
+import { Login } from '../services/spotify/Login'
+
 
 
 type MainCardProps = {
+    code: string | null
     name: string
     fav_song: string
     profile_pic: string
@@ -26,7 +30,7 @@ export const MainCard = (props: MainCardProps) => {
                        {props.name} 
                     </h1>
                     <h2 className='text-4xl my-7'>
-                        {props.fav_song}
+                        {!props.code ? <Login/> : <Dashboard code={props.code}/>}
                     </h2>
                     
                 </div>
