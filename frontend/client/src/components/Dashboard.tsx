@@ -5,7 +5,7 @@ import { Player } from './Player'
 import SpotifyWebApi from 'spotify-web-api-node'
 
 const spotifyApi = new SpotifyWebApi({
-  clientId: import.meta.env.VITE_CLIENT_ID
+  clientId: import.meta.env.VITE_SPOTIFY_CLIENT_ID
 })
 
 export const Dashboard = ({code}: {code: string | null}) => {

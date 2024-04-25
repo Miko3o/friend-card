@@ -3,12 +3,14 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const spotifyWebApi = require('spotify-web-api-node');
 
+require('dotenv').config();
+
 const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 
-const clientID = "3f726e510e704716a984793b24877ced";
-const clientSecret = "63c553e7fae84d98a9fbd57bee8b5685";
+const clientID = process.env.SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
 
 app.post('/refresh', (req, res) => {
