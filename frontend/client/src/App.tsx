@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { gapi } from 'gapi-script';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode'
 
@@ -19,6 +20,7 @@ import { GLogin } from './components/GoogleLogin';
 const googleClientID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 const googleClientSecret = import.meta.env.VITE_GOOGLE_CLIENT_SECRET;
 
+//code
 //code
 const code: string | null = new URLSearchParams(window.location.search).get('code')
 

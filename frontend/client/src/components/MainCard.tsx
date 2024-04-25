@@ -1,7 +1,7 @@
 import'./components.css'
 
 import { Dashboard } from './Dashboard'
-import { Login } from '../services/spotify/Login'
+import { SpotifyLogin } from './SpotifyLogin'
 
 
 
@@ -30,7 +30,7 @@ export const MainCard = (props: MainCardProps) => {
                        {props.name} 
                     </h1>
                     <h2 className='text-4xl my-7'>
-                        {!props.code ? <Login/> : <Dashboard code={props.code}/>}
+                        {!props.code ? <SpotifyLogin/> : <Dashboard code={props.code}/>}
                     </h2>
                     
                 </div>
