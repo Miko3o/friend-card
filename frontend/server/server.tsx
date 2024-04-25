@@ -9,8 +9,8 @@ const app = express();
 app.use(cors())
 app.use(bodyParser.json())
 
-const clientID = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
+const clientID = process.env.SPOTIFY_CLIENT_ID;
+const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
 app.post('/refresh', (req, res) => {
     const refreshToken = req.body.refreshToken
