@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom';
-import axios from 'axios';
-import { jwtDecode } from 'jwt-decode'
+import './App.css'
 
-
-import { MainCard } from './components/MainCard'
 import { Navbar } from './Navbar';
 
-import './App.css'
 import { LoginPage } from './pages/LoginPage';
-
-import placeholder_person from './assets/images/chao.png'
+import { ProfilePage } from './pages/ProfilePage';
 
 
 
@@ -42,7 +37,7 @@ function App() {
         <Navbar/>
         <Routes>
           <Route path="/" element={<LoginPage />} />
-          <Route path="/profile" element={<MainCard code={code} name='chao' fav_song='walking on sunshine' profile_pic={placeholder_person} background_color={backgroundColor} bottom_bar_color={bottomBarColor}/>} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Routes>
       </div>
     </>

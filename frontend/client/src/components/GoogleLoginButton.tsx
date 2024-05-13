@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode'
 import { GoogleLogin } from '@react-oauth/google';
 
 
 export const GLogin = () => {
     const [user, setUser] = useState<any>({})
+    const navigate = useNavigate()
 
     const handleOnSuccess = (credentialResponse: any) => {
         console.log('credential response:', credentialResponse)
@@ -15,6 +17,7 @@ export const GLogin = () => {
         if (signInDiv) {
             signInDiv.hidden = true;
         }
+        navigate('/profile')
     }
 
     const handleSignOut = (event: any) => {
@@ -23,7 +26,10 @@ export const GLogin = () => {
         if (signInDiv) {
             signInDiv.hidden = false
         }
+        navigate('/')
     }
+
+
 
 
     //if we have no user: sign in button
