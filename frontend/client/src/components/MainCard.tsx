@@ -1,7 +1,7 @@
 import'./components.css'
 
 import { Dashboard } from './Dashboard'
-import { SpotifyLogin } from './SpotifyLogin'
+import { SpotifyLogin } from './SpotifyLoginButton'
 
 
 

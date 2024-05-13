@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
+import { Route, Routes } from 'react-router-dom';
 import axios from 'axios';
 import { jwtDecode } from 'jwt-decode'
 
 
 import { MainCard } from './components/MainCard'
-import { GoogleLogin } from '@react-oauth/google';
+import { Navbar } from './Navbar';
 
-
+import './App.css'
+import { LoginPage } from './pages/LoginPage';
 
 import placeholder_person from './assets/images/chao.png'
 
-import './App.css'
-import { GLogin } from './components/GoogleLogin';
+
 
 
 
@@ -37,9 +38,12 @@ function App() {
 
   return (
     <>
-      <div className="flex justify-center h-screen w-screen bg-slate-300">
-        <GLogin/>
-        <MainCard code={code} name='chao' fav_song='walking on sunshine' profile_pic={placeholder_person} background_color={backgroundColor} bottom_bar_color={bottomBarColor}/>
+      <div className="h-screen w-screen bg-slate-300">
+        <Navbar/>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/profile" element={<MainCard code={code} name='chao' fav_song='walking on sunshine' profile_pic={placeholder_person} background_color={backgroundColor} bottom_bar_color={bottomBarColor}/>} />
+        </Routes>
       </div>
     </>
   )

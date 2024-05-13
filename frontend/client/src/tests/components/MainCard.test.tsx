@@ -4,7 +4,7 @@ import '@testing-library/jest-dom'
 
 
 import { MainCard } from '../../components/MainCard'
-import { SpotifyLogin } from '../../components/SpotifyLogin'
+import { SpotifyLogin } from '../../components/SpotifyLoginButton'
 import { Dashboard } from '../../components/Dashboard'
 
 const mockSpotifyLogin = jest.fn()
